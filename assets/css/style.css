@@ -1,0 +1,871 @@
+/*Réinitialisation des marges des éléments*/
+
+*, *::before, *::after
+{
+  margin : 0;
+  padding : 0;
+  box-sizing : border-box;
+}
+
+html
+{
+  scroll-behavior : smooth;
+}
+
+html, body
+{
+  min-width : 22.5rem;
+  width : 100%;
+  height : 100%;
+  font-size : 1rem;
+  font-family : 'Roboto', Arial, sans-serif;
+  margin: 0;
+}
+
+
+/*Placement du header and co ↓↓↓*/
+
+.intro
+{
+  width : 100%;
+  height : 100%;
+  margin : auto;
+  background : black url(../images/intro.jpg) no-repeat 50% 50%;
+  background-size : cover;
+}
+
+.frame
+{
+  border : 0.2rem solid white;
+  border-radius : 50%;
+  border-image: none;
+  width : 10rem;
+  height : 10rem;
+  margin : 0 auto;
+  overflow: hidden;
+  position : absolute;
+  top : 50%;
+  left : 50%;
+  transform: translate(-50%, -50%);
+}
+
+.header
+{
+  position : absolute;
+  top : calc(50% + 12rem);
+  left : 50%;
+  transform: translate(-50%, -50%);
+  text-align : center;
+}
+
+
+/*Navigation ↓↓↓*/
+
+nav
+{
+  position : fixed;
+  top : 10rem;
+  right : 0;
+}
+
+.menu-sticky-items
+{
+  list-style : none inside;
+  margin : 0;
+}
+
+.menu-sticky-item
+{
+  position : relative;
+  height : 3rem;
+}
+
+.menu-sticky-icon
+{
+  background : #94003B center no-repeat;
+  background-size : contain;
+  width : 3rem;
+  height : 3rem;
+  display : inline-block;
+  margin-right : 0.5rem;
+  border : 8px solid #94003B;
+}
+
+.menu-sticky-icon-experiences
+{
+  background-image : url(../images/experience.png);
+}
+
+.menu-sticky-icon-formations
+{
+  background-image : url(../images/formations.png);
+}
+
+.menu-sticky-icon-competences
+{
+  background-image : url(../images/competences.png);
+}
+
+.menu-sticky-icon-loisirs
+{
+  background-image : url(../images/loisirs.png);
+}
+
+.menu-sticky-link
+{
+  background-color : #442A20;
+  color : white;
+  display : flex;
+  align-items : center;
+  padding-right : 1rem;
+  width : 13rem;
+  position : absolute;
+  top : 0;
+  left : -3rem;
+}
+
+.menu-sticky-link:hover
+{
+  color: #FFFFFF;
+  left: -13rem;
+}
+
+.menu-sticky-link:hover .menu-sticky-icon
+{
+  background-color: #897174;
+  border-color: #897174;
+}
+
+
+/*Communs ↓↓↓*/
+
+.header-title
+{
+  color : #FFFFFF;
+  margin-bottom : 1rem;
+  font-size : 1.5rem;
+  font-family : 'Luckiest Guy', serif;
+  letter-spacing : 0.1rem;
+}
+
+.header-subtitle
+{
+  color : #FFFFFF;
+  font-size : 1.25rem;
+  font-family : 'Montserrat', sans-serif;
+}
+
+img
+{
+  display : block;
+  max-width : 100%;
+  height : auto;
+  margin-bottom : 1rem;
+}
+
+
+ul
+{
+  list-style : square inside;
+  margin-left : 1rem;
+}
+
+::marker
+{
+  color : #94003B;
+}
+
+a
+{
+  color : #005B4D;
+  text-decoration : none;
+}
+
+a:hover
+{
+  color : #00907E;
+  text-decoration : underline;
+}
+
+section.experience, section.formations, article.informations-details
+{
+  margin-right : 1rem;
+  padding : 1rem;
+}
+
+section.competences
+{
+  margin : 0 1rem 2rem 0;
+}
+
+
+/*Contenu principal ↓↓↓*/
+
+.main-container
+{
+  max-width : 80rem;
+  margin : 1rem auto;
+  padding-left : 1rem;
+  display : flex;
+  flex-direction : column-reverse;
+}
+
+.aside
+{
+  padding-right : 1rem;
+  margin : 1rem;
+  text-align : center;
+}
+
+.aside-contact /*Bouton "me contacter"*/
+{
+  background-color : #442A20;
+  color : #FFFFFF;
+  border : 1px solid #442A20;
+  display : flex;
+  align-items : center;
+  justify-content : center;
+  padding : 0.5rem 1rem;
+  text-align : center;
+  text-decoration : none;
+  transition : all .5s;
+  margin-bottom : 1rem;
+  border-radius : 0.25rem;
+}
+
+.aside-contact:hover
+{
+  background-color : #FFFFFF;
+  color : #442A20;
+  animation: bounce 1s;
+}
+
+.aside-contact::before
+{
+  content : '';
+  display : inline-block;
+  background : transparent url(../images/email-white.png) center no-repeat;
+  width : 1.5rem;
+  height : 1.5rem;
+  background-size : contain;
+  margin-right : 0.5rem;
+  transition : all .5s;
+}
+
+.aside-contact:hover::before
+{
+  content : '';
+  display : inline-block;
+  background : transparent url(../images/email.png) center no-repeat;
+  width : 1.5rem;
+  height : 1.5rem;
+  background-size : contain;
+  margin-right : 0.5rem;
+}
+
+.aside-informations
+{
+  margin-bottom : 1rem;
+  color : #666666;
+  text-transform : uppercase;
+  font-size : 0.8rem;
+}
+
+.aside-title
+{
+  font-family: 'Luckiest Guy', serif;
+  font-weight : normal;
+  color : #442A20;
+  text-transform : uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.aside-networks
+{
+  list-style : none inside;
+  margin-left : 0;
+}
+
+.aside-networks-link
+{
+  padding: .25rem .5rem;
+  display: flex;
+  flex-direction : column;
+  align-items: center;
+}
+
+.aside-networks-link::before
+{
+  content:'';
+  display: inline-block;
+  margin-right: .25rem;
+  width: 2rem;
+  height: 2rem;
+  background : transparent center no-repeat;
+  background-size: contain;
+}
+
+.aside-networks-link-facebook:before
+{
+  background-image: url(../images/facebook.png);
+}
+
+.aside-networks-link-linkedin:before
+{
+  background-image: url(../images/linkedin.png);
+}
+
+.aside-networks-link-viadeo:before
+{
+  background-image: url(../images/viadeo.png);
+}
+
+/*Experiences/formations [...] ↓↓↓*/
+
+.informations-title
+{
+  font-family: 'Luckiest Guy', serif;
+  color : #94003B;
+  text-transform : uppercase;
+  font-size : 2rem;
+}
+
+.informations-details-title
+{
+  font-family: 'Montserrat', sans-serif;
+  font-weight : normal;
+  font-size : 1.5rem;
+  margin-top : 0.5rem;
+}
+
+.informations-details-employer
+{
+  font-weight : bold;
+  color : #442A20;
+  margin-bottom : 0.6rem;
+}
+
+.informations-details
+{
+  margin-bottom : 1rem;
+}
+
+.informations-details::after
+{
+  content : '';
+  display : inline-block;
+  width : 25%;
+  height : 1px;
+  border-top : 1px solid #CCCCCC;
+}
+
+.informations-employer
+{
+  border-radius : 0.5rem;
+  background-color : #FFF3F8;
+  margin : 1rem;
+  padding : 1rem;
+  display : flex;
+  flex-direction : column;
+  flex-wrap : wrap;
+  text-align : center;
+  align-items : center;
+  box-shadow : 1px 1px 2px 2px #FFEAEF;
+}
+
+.informations-employer-name
+{
+  font-weight : bold;
+  color : #442A20;
+  flex : 0 0 100%;
+}
+
+.informations-employer-details
+{
+  flex : 0 0 33.3%;
+}
+
+.informations-employer-details-link
+{
+  display : flex;
+  align-items : center;
+  padding : 0.25rem;
+}
+
+.informations-employer-details-link-website::before
+{
+  background : transparent url(../images/carte-du-monde.png) center no-repeat;
+}
+
+.informations-employer-details-link-facebook::before
+{
+  background : transparent url(../images/facebook.png) center no-repeat;
+}
+
+.informations-employer-details-link-twitter::before
+{
+  background : transparent url(../images/twitter.png) center no-repeat;
+}
+
+.informations-employer-details-link::before
+{
+  content : '';
+  display : inline-block;
+  width : 1.5rem;
+  height : 1.5rem;
+  margin-right : 0.5rem;
+  background-size : contain;
+}
+
+.informations-employer-details-link-website:hover::before, .informations-employer-details-link-facebook:hover::before, .informations-employer-details-link-twitter:hover::before
+{
+  animation : bounce 1s;
+}
+
+.informations-employer-details-phone
+{
+  font-family : 'Montserrat', sans-serif;
+  font-size : 1rem;
+  font-weight : bold;
+  color : black;
+}
+
+
+/*Compétences ↓↓↓*/
+
+.informations-competences
+{
+  max-width : 50rem;
+  display : flex;
+  justify-content : space-between;
+  margin : 0.25rem 0;
+}
+
+.progress-container
+{
+  width : 10rem;
+  height : 1rem;
+  display : inline-block;
+  border : 1px solid lightgrey;
+  overflow : hidden;
+}
+
+.progress-bar
+{
+  width : 50%;
+  height : 1rem;
+  display : block;
+  background-color: #442A20;
+  opacity: 1;
+  background-size: 1rem 1rem;
+}
+
+#html
+{
+  width : 75%;
+}
+
+#css
+{
+  width : 60%;
+}
+
+#js
+{
+  width : 45%;
+}
+
+#sql
+{
+  width : 30%;
+}
+
+#atom
+{
+  width : 75%;
+}
+
+#wp
+{
+  width : 55%;
+}
+
+#php
+{
+  width : 50%;
+}
+
+#krita
+{
+  width : 85%;
+}
+
+#fr
+{
+  width : 100%;
+}
+
+#en
+{
+  width : 75%;
+}
+
+#es
+{
+  width : 60%;
+}
+
+#ru
+{
+  width : 15%;
+}
+
+#ai
+{
+  width : 7.5%;
+}
+
+
+/*Animations barres compétences et des liens vers les réseaux sociaux (fonctionne uniquement sur écrans > 1024px de large)↓↓↓*/
+
+@media (min-width : 1024px)
+{
+  #html
+  {
+    animation : anim-html 3s;
+  }
+  @keyframes anim-html
+  {
+    from
+    {
+      width: 0;
+    }
+    to
+    {
+      width: 75%;
+    }
+  }
+
+  #css
+  {
+    animation : anim-css 3s;
+  }
+  @keyframes anim-css
+  {
+    from
+    {
+      width: 0;
+    }
+    to
+    {
+      width: 60%;
+    }
+  }
+
+  #js
+  {
+    animation : anim-js 3s;
+  }
+  @keyframes anim-js
+  {
+    from
+    {
+      width: 0;
+    }
+    to
+    {
+      width: 45%;
+    }
+  }
+
+  #sql
+  {
+    animation : anim-sql 3s;
+  }
+  @keyframes anim-sql
+  {
+    from
+    {
+      width: 0;
+    }
+    to
+    {
+      width: 30%;
+    }
+  }
+
+  #atom
+  {
+    animation : anim-atom 3s;
+  }
+  @keyframes anim-atom
+  {
+    from
+    {
+      width: 0;
+    }
+    to
+    {
+      width: 75%;
+    }
+  }
+
+  #wp
+  {
+    animation : anim-wp 3s;
+  }
+  @keyframes anim-wp
+  {
+    from
+    {
+      width: 0;
+    }
+    to
+    {
+      width: 55%;
+    }
+  }
+
+  #php
+  {
+    animation : anim-php 3s;
+  }
+  @keyframes anim-php
+  {
+    from
+    {
+      width: 0;
+    }
+    to
+    {
+      width: 50%;
+    }
+  }
+
+  #krita
+  {
+    animation : anim-krita 3s;
+  }
+  @keyframes anim-krita
+  {
+    from
+    {
+      width: 0;
+    }
+    to
+    {
+      width: 85%;
+    }
+  }
+
+  #fr
+  {
+    animation : anim-fr 3s;
+  }
+  @keyframes anim-fr
+  {
+    from
+    {
+      width: 0;
+    }
+    to
+    {
+      width: 100%;
+    }
+  }
+
+  #en
+  {
+    animation : anim-en 3s;
+  }
+  @keyframes anim-en
+  {
+    from
+    {
+      width: 0;
+    }
+    to
+    {
+      width: 75%;
+    }
+  }
+
+  #es
+  {
+    animation : anim-es 3s;
+  }
+  @keyframes anim-es
+  {
+    from
+    {
+      width: 0;
+    }
+    to
+    {
+      width: 60%;
+    }
+  }
+
+  #ru
+  {
+    animation : anim-ru 3s;
+  }
+  @keyframes anim-ru
+  {
+    from
+    {
+      width: 0;
+    }
+    to
+    {
+      width: 15%;
+    }
+  }
+
+  #ai
+  {
+    animation : anim-ai 3s;
+  }
+  @keyframes anim-ai
+  {
+    from
+    {
+      width: 0;
+    }
+    to
+    {
+      width: 7.5%;
+    }
+  }
+
+  @keyframes bounce
+  {
+    0%, 20%, 60%, 100%
+    {
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+    }
+
+    40%
+    {
+      -webkit-transform: translateY(-10px);
+      transform: translateY(-10px);
+    }
+
+    80%
+    {
+      -webkit-transform: translateY(-5px);
+      transform: translateY(-5px);
+    }
+  }
+}
+
+
+/*Responsive (au mieux) ↓↓↓*/
+
+@media (min-width : 430px)
+{
+  .header
+  {
+    top : calc(50% + 10rem);
+  }
+
+}
+
+@media (min-width : 550px)
+{
+  .header-title
+  {
+    margin-bottom : 0.5rem;
+    font-size : 2rem;
+  }
+
+  .informations-employer
+  {
+    flex-direction : row;
+    flex-wrap : wrap;
+    text-align : left;
+    align-items : left;
+  }
+
+  .informations-employer-name
+  {
+    flex : 0 0 100%;
+  }
+
+  .informations-employer-details
+  {
+    flex : 0 0 33.3%;
+  }
+
+  .informations-employer-details-phone
+  {
+    font-size : 1.2rem;
+    color : black;
+  }
+}
+
+
+@media (min-width : 900px)
+{
+  /*Contenu principal ↓↓↓*/
+
+  .main-container
+  {
+    flex-direction : row-reverse;
+  }
+
+  .content
+  {
+    flex-basis : 75%;
+    padding : 0 1rem;
+  }
+
+  .aside
+  {
+    flex-basis : 25%;
+    border-right : 3px solid #94003B;
+    padding-right : 1rem;
+    text-align : left;
+  }
+
+  .aside-networks-link::before
+  {
+    width: 1.25rem;
+    height: 1rem;
+  }
+
+  .aside-networks-link:hover::before
+  {
+    animation: bounce 1s;
+  }
+
+  .aside-networks-link-facebook:before
+  {
+    background-image: url(../images/facebook.png);
+  }
+
+  .aside-networks-link-linkedin:before
+  {
+    background-image: url(../images/linkedin.png);
+  }
+
+  .aside-networks-link-viadeo:before
+  {
+    background-image: url(../images/viadeo.png);
+  }
+}
+
+
+@media (min-width : 1440px)
+{
+  .header-title
+  {
+    font-size : 2.25rem;
+  }
+
+  .header-subtitle
+  {
+    margin-bottom : 1.5rem;
+  }
+}
